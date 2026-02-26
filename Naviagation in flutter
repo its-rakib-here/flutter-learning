@@ -3,3 +3,24 @@
  onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context)=> AboutPage(),),);
             },
+
+
+
+
+/////////   Navigation using route 
+
+in main.dart file .
+ routes: {
+        '/': (_) => homePage(),
+        '/about_page': (_) => AboutPage()
+
+      },
+
+      initialRoute: '/',
+
+
+then in the homepage inside onPress 
+Navigator.pushName('context','about_page);
+
+
+/////////// If we want to pass the value dynamically so we need to use generateRoute
