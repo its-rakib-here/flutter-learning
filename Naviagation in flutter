@@ -1,0 +1,5 @@
+//////////////////// Using Navigator ////////////
+
+ onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context)=> AboutPage(),),);
+            },
