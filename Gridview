@@ -1,0 +1,94 @@
+  /////////////////////SliverGridDelegateWithFixedCrossAxisCount////////////////
+
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+      ),
+
+      body: GridView(
+        padding: EdgeInsets.all(15),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            
+              crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+            mainAxisSpacing: 10
+
+          ),
+
+              children: [
+
+                Image.asset('assets/images/varadibo.jpeg',fit: BoxFit.cover,),
+                Image.asset('assets/images/varadibo.jpeg',fit: BoxFit.cover,),
+
+              ],
+      ),
+
+    );
+  }
+}
+
+
+///////////////SliverGridDelegateWithMaxCrossAxisExtent/////////// Its work with screen size
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+      ),
+
+      body: GridView(
+        padding: EdgeInsets.all(15),
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            
+              maxCrossAxisExtent: 2,
+                  crossAxisSpacing: 10,
+            mainAxisSpacing: 10
+
+          ),
+
+              children: [
+
+                Image.asset('assets/images/varadibo.jpeg',fit: BoxFit.cover,),
+                Image.asset('assets/images/varadibo.jpeg',fit: BoxFit.cover,),
+
+              ],
+      ),
+
+    );
+  }
+}
+ 
