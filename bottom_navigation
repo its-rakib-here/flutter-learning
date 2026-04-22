@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  // GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
+
+  int index =0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+
+        onTap: (value){
+
+          setState(() {
+            index = value;
+          });
+        },
+
+        currentIndex:,
+
+        items: [
+          BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'settings',
+          ),
+        ],
+      ),
+    );
+  }
+}
