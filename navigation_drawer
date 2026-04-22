@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: globalKey,
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        leading: IconButton(
+          onPressed: () {
+            globalKey.currentState?.openDrawer();
+          },
+          icon: Icon(Icons.menu),
+          color: Colors.white,
+        ),
+      ),
+
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            FlutterLogo(size: 100),
+            Text(
+              "App titile",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 15.0),
+            ),
+
+            SizedBox(height: 15.0),
+            ListTile(
+              onTap: () {},
+
+              title: Text("Home"),
+              leading: Icon(Icons.home),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
